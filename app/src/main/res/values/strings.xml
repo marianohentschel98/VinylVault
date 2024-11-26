@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name" translatable="false">VinylVault</string>
+    <string name="a_adir_a_deseados">+ Añadir a deseados</string>
+    <string name="autor">Autor</string>
+    <string name="g_nero">Género</string>
+    <string name="released">Released</string>
+    <string name="titulo_vinilo">Titulo Vinilo</string>
+    <string name="pop" translatable="false">Pop</string>
+    <string name="rock" translatable="false">Rock</string>
+    <string name="hip_hop" translatable="false">Hip-Hop</string>
+    <string name="vinyl_vault" translatable="false">Vinyl Vault</string>
+    <string name="toast_message">Aún no se estableció funcionalidad</string>
+</resources>
