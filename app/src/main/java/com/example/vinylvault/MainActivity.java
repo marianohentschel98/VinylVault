@@ -31,58 +31,62 @@ public class MainActivity extends AppCompatActivity {
         });
 
         listaVinyl = new ArrayList<>();
-        cargarVinyls(); // Método para cargar los vinilos en la lista
+        cargarVinyls(); // metodo para cargar los vinilos en la lista
 
         RecyclerView vinylList = findViewById(R.id.vinylList);
         vinylList.setLayoutManager(new LinearLayoutManager(this));
         vinylAdapter = new VinylAdapter(new ArrayList<>(listaVinyl), this);
         vinylList.setAdapter(vinylAdapter);
 
-        // Switches
+        // switches
         Switch switchPop = findViewById(R.id.switch1);
         Switch switchRock = findViewById(R.id.switch2);
         Switch switchDisco = findViewById(R.id.switch3);
         Switch switchHipHop = findViewById(R.id.switch4);
 
-        CompoundButton.OnCheckedChangeListener listener = (buttonView, isChecked) -> filtrarVinilos(
-                switchPop.isChecked(),
-                switchRock.isChecked(),
-                switchDisco.isChecked(),
-                switchHipHop.isChecked()
-        );
-
-        switchPop.setOnCheckedChangeListener(listener);
-        switchRock.setOnCheckedChangeListener(listener);
-        switchDisco.setOnCheckedChangeListener(listener);
-        switchHipHop.setOnCheckedChangeListener(listener);
+        switchPop.setOnCheckedChangeListener((buttonView, isChecked) -> filtrarVinilos());
+        switchRock.setOnCheckedChangeListener((buttonView, isChecked) -> filtrarVinilos());
+        switchDisco.setOnCheckedChangeListener((buttonView, isChecked) -> filtrarVinilos());
+        switchHipHop.setOnCheckedChangeListener((buttonView, isChecked) -> filtrarVinilos());
     }
 
     private void cargarVinyls() {
-        try{
-        listaVinyl.add(new Vinyl(R.drawable.oceans_of_fantasy, "Oceans of Fantasy", "Boney M", "33", "1979", "Disco"));
-        listaVinyl.add(new Vinyl(R.drawable.el_hombre_hace_planes, "El Hombre Hace Planes Dios Se Ríe", "Dano", "33", "2023", "Hip Hop"));
-        listaVinyl.add(new Vinyl(R.drawable.thriller, "Thriller", "Michael Jackson", "33", "1982", "Pop"));
-        listaVinyl.add(new Vinyl(R.drawable.the_colour_and_the_shape, "The Colour and the Shape", "Foo Fighters", "33", "1997", "Rock"));
-        listaVinyl.add(new Vinyl(R.drawable.i_am, "I Am", "Earth, Wind & Fire", "33", "1979", "Disco"));
-        listaVinyl.add(new Vinyl(R.drawable.cruisin, "Cruisin'", "Village People", "33", "1978", "Disco"));
-        listaVinyl.add(new Vinyl(R.drawable.dark_side_of_the_moon, "The Dark Side of the Moon", "Pink Floyd", "33", "1973", "Rock"));
-        listaVinyl.add(new Vinyl(R.drawable.so_much_fun, "So Much Fun", "Young Thug", "33", "2019", "Hip Hop"));
-        listaVinyl.add(new Vinyl(R.drawable.stadium_arcadium, "Stadium Arcadium", "Red Hot Chili Peppers", "33", "2006", "Rock"));
-        listaVinyl.add(new Vinyl(R.drawable.am, "AM", "Arctic Monkeys", "33", "2013", "Rock"));
-        listaVinyl.add(new Vinyl(R.drawable.notorious, "Ready to Die", "The Notorious B.I.G.", "33", "1994", "Hip Hop"));
+        try {
+            listaVinyl.add(new Vinyl(R.drawable.oceans_of_fantasy, "Oceans of Fantasy", "Boney M", "33", "1979", "Disco"));
+            listaVinyl.add(new Vinyl(R.drawable.el_hombre_hace_planes, "El Hombre Hace Planes Dios Se Ríe", "Dano", "33", "2023", "Hip Hop"));
+            listaVinyl.add(new Vinyl(R.drawable.thriller, "Thriller", "Michael Jackson", "33", "1982", "Pop"));
+            listaVinyl.add(new Vinyl(R.drawable.the_colour_and_the_shape, "The Colour and the Shape", "Foo Fighters", "33", "1997", "Rock"));
+            listaVinyl.add(new Vinyl(R.drawable.i_am, "I Am", "Earth, Wind & Fire", "33", "1979", "Disco"));
+            listaVinyl.add(new Vinyl(R.drawable.cruisin, "Cruisin'", "Village People", "33", "1978", "Disco"));
+            listaVinyl.add(new Vinyl(R.drawable.dark_side_of_the_moon, "The Dark Side of the Moon", "Pink Floyd", "33", "1973", "Rock"));
+            listaVinyl.add(new Vinyl(R.drawable.so_much_fun, "So Much Fun", "Young Thug", "33", "2019", "Hip Hop"));
+            listaVinyl.add(new Vinyl(R.drawable.stadium_arcadium, "Stadium Arcadium", "Red Hot Chili Peppers", "33", "2006", "Rock"));
+            listaVinyl.add(new Vinyl(R.drawable.am, "AM", "Arctic Monkeys", "33", "2013", "Rock"));
+            listaVinyl.add(new Vinyl(R.drawable.notorious, "Ready to Die", "The Notorious B.I.G.", "33", "1994", "Hip Hop"));
             Log.d("MainActivity", "Lista de vinilos cargada con éxito");
         } catch (Exception e) {
             Log.e("MainActivity", "Error al cargar la lista de vinilos");
         }
     }
-    private void filtrarVinilos(boolean pop, boolean rock, boolean disco, boolean hipHop) {
+
+    private void filtrarVinilos() {
+        Switch switchPop = findViewById(R.id.switch1);
+        Switch switchRock = findViewById(R.id.switch2);
+        Switch switchDisco = findViewById(R.id.switch3);
+        Switch switchHipHop = findViewById(R.id.switch4);
+
+        boolean pop = switchPop.isChecked();
+        boolean rock = switchRock.isChecked();
+        boolean disco = switchDisco.isChecked();
+        boolean hipHop = switchHipHop.isChecked();
+
         ArrayList<Vinyl> listaFiltrada = new ArrayList<>();
 
         if (!pop && !rock && !disco && !hipHop) {
-            // Si no hay switches activos, mostrar todos
+            // si no hay switches activos, mostrarlos todos
             listaFiltrada.addAll(listaVinyl);
         } else {
-            // Filtrar según switches activos
+            // filtrar según switches activos
             for (Vinyl vinyl : listaVinyl) {
                 if ((pop && vinyl.getGenero().equalsIgnoreCase("Pop")) ||
                         (rock && vinyl.getGenero().equalsIgnoreCase("Rock")) ||
@@ -93,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        // Actualizar el RecyclerView
+        // actualizar el recyclerview
         vinylAdapter.updateList(listaFiltrada);
     }
 }
