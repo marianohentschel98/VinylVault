@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.CompoundButton;
 import android.widget.Switch;
+import android.widget.TableRow;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +13,9 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
@@ -44,10 +48,46 @@ public class MainActivity extends AppCompatActivity {
         Switch switchDisco = findViewById(R.id.switch3);
         Switch switchHipHop = findViewById(R.id.switch4);
 
-        switchPop.setOnCheckedChangeListener((buttonView, isChecked) -> filtrarVinilos());
-        switchRock.setOnCheckedChangeListener((buttonView, isChecked) -> filtrarVinilos());
-        switchDisco.setOnCheckedChangeListener((buttonView, isChecked) -> filtrarVinilos());
-        switchHipHop.setOnCheckedChangeListener((buttonView, isChecked) -> filtrarVinilos());
+        switchPop.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            String message = isChecked ? "Pop activado" : "Pop desactivado";
+            Snackbar.make(buttonView, message, Snackbar.LENGTH_SHORT).show();
+            filtrarVinilos();
+        });
+
+        switchRock.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            String message = isChecked ? "Rock activado" : "Rock desactivado";
+            Snackbar.make(buttonView, message, Snackbar.LENGTH_SHORT).show();
+            filtrarVinilos();
+        });
+
+        switchDisco.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            String message = isChecked ? "Disco activado" : "Disco desactivado";
+            Snackbar.make(buttonView, message, Snackbar.LENGTH_SHORT).show();
+            filtrarVinilos();
+        });
+
+        switchHipHop.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            String message = isChecked ? "Hip Hop activado" : "Hip Hop desactivado";
+            Snackbar.make(buttonView, message, Snackbar.LENGTH_SHORT).show();
+            filtrarVinilos();
+        });
+        TabLayout tabLayout = findViewById(R.id.tabLayout);
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                Snackbar.make(findViewById(android.R.id.content), "Próximamente", Snackbar.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
     }
 
     private void cargarVinyls() {

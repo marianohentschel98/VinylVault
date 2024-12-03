@@ -12,6 +12,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import java.util.ArrayList;
 
 public class VinylAdapter extends RecyclerView.Adapter<VinylAdapter.VinylViewHolder>{
@@ -44,8 +46,8 @@ public class VinylAdapter extends RecyclerView.Adapter<VinylAdapter.VinylViewHol
             Toast.makeText(context, mensaje, Toast.LENGTH_SHORT).show();
         });
         holder.button1.setOnClickListener(v -> {
-            String toastMessage = context.getString(R.string.toast_message);
-            Toast.makeText(context, toastMessage, Toast.LENGTH_SHORT).show();
+            String snackbarMessage = context.getString(R.string.toast_message);
+            Snackbar.make(v, snackbarMessage, Snackbar.LENGTH_SHORT).show();
         });
     }
 
