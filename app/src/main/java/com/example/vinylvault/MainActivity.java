@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
     private void cargarVinyls() {
         try {
             listaVinyl.add(new Vinyl(R.drawable.oceans_of_fantasy, "Oceans of Fantasy", "Boney M", "33", "1979", "Disco"));
-            listaVinyl.add(new Vinyl(R.drawable.el_hombre_hace_planes, "El Hombre Hace Planes Dios Se Ríe", "Dano", "33", "2023", "Hip Hop"));
+            listaVinyl.add(new Vinyl(R.drawable.el_hombre_hace_planes, "EHHPDSR", "Dano", "33", "2023", "Hip Hop"));
             listaVinyl.add(new Vinyl(R.drawable.thriller, "Thriller", "Michael Jackson", "33", "1982", "Pop"));
             listaVinyl.add(new Vinyl(R.drawable.the_colour_and_the_shape, "The Colour and the Shape", "Foo Fighters", "33", "1997", "Rock"));
             listaVinyl.add(new Vinyl(R.drawable.i_am, "I Am", "Earth, Wind & Fire", "33", "1979", "Disco"));

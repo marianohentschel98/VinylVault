@@ -10,18 +10,18 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/vinylList"
-        android:layout_width="514dp"
-        android:layout_height="196dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="44dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="570dp"
+        android:layout_height="224dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintStart_toEndOf="@+id/switch1"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="316dp"
+        android:layout_marginStart="324dp"
         android:fontFamily="@font/alkatra"
         android:text="@string/vinyl_vault"
         android:textColor="@color/md_theme_onPrimaryContainer"
@@ -29,16 +29,53 @@
         android:textColorLink="@color/md_theme_onPrimaryFixed"
         android:textSize="29sp"
         app:layout_constraintBottom_toTopOf="@+id/vinylList"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.484" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="133dp"
+        android:layout_height="103dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.731" />
+        app:srcCompat="@drawable/carritovinylvaultsinfondo"
+        tools:ignore="ContentDescription,VisualLintBounds,SpeakableTextPresentCheck" />
+
+    <Switch
+        android:id="@+id/switch4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="26dp"
+        android:fontFamily="@font/alkatra"
+        android:text="@string/hip_hop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch3"
+        tools:ignore="TouchTargetSizeCheck,UseSwitchCompatOrMaterialXml" />
+
+    <Switch
+        android:id="@+id/switch3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="26dp"
+        android:fontFamily="@font/alkatra"
+        android:text="Disco"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch2"
+        tools:ignore="HardcodedText,TouchTargetSizeCheck,UseSwitchCompatOrMaterialXml" />
 
     <Switch
         android:id="@+id/switch1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="100dp"
         android:fontFamily="@font/alkatra"
         android:text="@string/pop"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,57 +86,20 @@
         android:id="@+id/switch2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="26dp"
         android:fontFamily="@font/alkatra"
         android:text="@string/rock"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switch1"
         tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
 
-    <Switch
-        android:id="@+id/switch3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="28dp"
-        android:fontFamily="@font/alkatra"
-        android:text="Disco"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch2"
-        tools:ignore="HardcodedText,TouchTargetSizeCheck,UseSwitchCompatOrMaterialXml" />
-
-    <Switch
-        android:id="@+id/switch4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="28dp"
-        android:fontFamily="@font/alkatra"
-        android:text="@string/hip_hop"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch3"
-        tools:ignore="TouchTargetSizeCheck,UseSwitchCompatOrMaterialXml" />
-
-    <ImageButton
-        android:id="@+id/imageButton6"
-        android:layout_width="133dp"
-        android:layout_height="103dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="4dp"
-        android:background="@android:color/transparent"
-        android:scaleType="centerInside"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/carritovinylvaultsinfondo"
-        tools:ignore="ContentDescription,VisualLintBounds,SpeakableTextPresentCheck" />
-
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
-        android:layout_width="655dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="14dp"
+        android:layout_width="715dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vinylList">
 

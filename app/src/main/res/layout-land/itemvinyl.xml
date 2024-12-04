@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/photo1"
+        android:layout_width="238dp"
+        android:layout_height="223dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription,ImageContrastCheck"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="330dp"
+        android:layout_height="239dp"
+        android:layout_marginTop="4dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@+id/photo1"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/title1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alkatra"
+            android:gravity="center"
+            android:text="@string/titulo_vinilo"
+            android:textColorLink="@color/md_theme_onBackground"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/artist1"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:fontFamily="@font/alkatra"
+            android:gravity="center"
+            android:text="@string/autor"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/genero1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:fontFamily="@font/alkatra"
+            android:gravity="center"
+            android:text="@string/g_nero"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/released1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alkatra"
+            android:gravity="center"
+            android:text="@string/released"
+            android:textColor="#929191"
+            tools:ignore="TextContrastCheck" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:backgroundTint="@color/md_theme_primaryContainer_highContrast"
+            android:fontFamily="@font/alkatra"
+            android:text="@string/a_adir_a_deseados"
+            tools:ignore="VisualLintButtonSize" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
